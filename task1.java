@@ -13,18 +13,20 @@ public class task1 {
     addToList(items, "Alexey", 234324545);
     System.out.println(items);
   }
-  
-  public static void addToList(HashMap<String, ArrayList<Integer>> uItems, String mapKey, Integer myItem) {
+
+  public static void addToList(
+    HashMap<String, ArrayList<Integer>> uItems,
+    String mapKey,
+    Integer myItem
+  ) {
     ArrayList<Integer> itemsList = uItems.get(mapKey);
-  
-    // if list does not exist create it
-    if(itemsList == null) {
-         itemsList = new ArrayList<Integer>();
-         itemsList.add(myItem);
-         uItems.put(mapKey, itemsList);
+
+    if (itemsList == null) {
+      itemsList = new ArrayList<Integer>();
+      itemsList.add(myItem);
+      uItems.put(mapKey, itemsList);
     } else {
-        // add if item is not already in list
-        if(!itemsList.contains(myItem)) itemsList.add(myItem);
+      if (!itemsList.contains(myItem)) itemsList.add(myItem);
     }
   }
 }
